@@ -7,9 +7,7 @@ var petsPath = path.join( __dirname, 'pets.json' );
 var node = path.basename( process.argv[ 0 ] );
 var file = path.basename( process.argv[ 1 ] );
 var cmd = process.argv[ 2 ];
-console.log( node );
-console.log( path.basename( process.argv[ 0 ] ) );
-console.log( file );
+var index = process.argv[ 3 ]
 
 if ( cmd === 'read' ) {
   fs.readFile( petsPath, 'utf8', function( err, data ) {
@@ -18,7 +16,7 @@ if ( cmd === 'read' ) {
 
     }
     var pets = JSON.parse( data );
-    console.log( pets );
+    console.log( pets[ index ] );
   } );
 } else {
   console.error( `Usage: ${node} ${file} [read | create | update | destroy]` );
