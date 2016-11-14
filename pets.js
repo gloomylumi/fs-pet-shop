@@ -15,7 +15,7 @@ if ( cmd === 'read' ) {
 
     }
     var index = process.argv[ 3 ];
-    var pets = JSON.parse( data );
+
     if ( !index ) {
       console.log( pets );
     } else if ( pets[ index ] ) {
